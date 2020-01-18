@@ -7,6 +7,6 @@ namespace WpfTestApp.ViewModels
 {
     public class ShellViewModel : Screen
     {
-
+        // 
     }
 }
