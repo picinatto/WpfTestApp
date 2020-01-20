@@ -24,6 +24,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="FistName" Grid.Row="1" Grid.Column="1">Testing</TextBlock>
+        <TextBlock x:Name="FirstName" Grid.Row="1" Grid.Column="1"></TextBlock>
     </Grid>
 </Window>

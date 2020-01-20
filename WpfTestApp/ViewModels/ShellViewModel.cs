@@ -7,7 +7,7 @@ namespace WpfTestApp.ViewModels
 {
     public class ShellViewModel : Screen
     {
-		private string _firstName;
+		private string _firstName = "Ricardo";
 
 		public string FirstName
 		{
