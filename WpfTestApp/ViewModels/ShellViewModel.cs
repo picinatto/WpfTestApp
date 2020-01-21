@@ -2,12 +2,23 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WpfTestApp.Models;
 
 namespace WpfTestApp.ViewModels
 {
-    public class ShellViewModel : Screen
-    {
+	public class ShellViewModel : Screen
+	{
 		private string _firstName = "Ricardo";
+		private string _lastName;
+		private BindableCollection<PersonModel> _people = new BindableCollection<PersonModel>();
+		private PersonModel _selectedPerson;
+
+		public ShellViewModel()
+		{
+			People.Add(new PersonModel { FirstName = "Ricardo", LastName = "Picinatto" });
+			People.Add(new PersonModel { FirstName = "Mariana", LastName = "Bazotti" });
+			People.Add(new PersonModel { FirstName = "Batman", LastName = "Robin" });
+		}
 
 		public string FirstName
 		{
@@ -19,8 +30,6 @@ namespace WpfTestApp.ViewModels
 				NotifyOfPropertyChange(() => FullName);
 			}
 		}
-
-		private string _lastName = "Picinatto";
 
 		public string LastName
 		{
@@ -37,6 +46,23 @@ namespace WpfTestApp.ViewModels
 		{
 			get { return $"{FirstName} {LastName}"; }
 		}
+
+		public BindableCollection<PersonModel> People
+		{
+			get { return _people; }
+			set { _people = value; }
+		}
+
+		public PersonModel SelectedPerson
+		{
+			get { return _selectedPerson; }
+			set 
+			{ 
+				_selectedPerson = value;
+				NotifyOfPropertyChange(() => SelectedPerson);
+			}
+		}
+
 
 	}
 }
