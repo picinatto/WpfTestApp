@@ -63,6 +63,21 @@ namespace WpfTestApp.ViewModels
 			}
 		}
 
-
+		public bool CanClearText(string firstName, string lastName)
+		{
+			if (String.IsNullOrWhiteSpace(firstName) && String.IsNullOrWhiteSpace(lastName))
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+		public void ClearText(string firstName, string lastName)
+		{
+			FirstName = "";
+			LastName = "";
+		}
 	}
 }

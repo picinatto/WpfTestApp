@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTestApp.Views"
         mc:Ignorable="d" FontSize="18"
-        Title="ShellView" Height="450" Width="800">
+        Title="ShellView" Height="350" Width="350">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -21,12 +21,13 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         
         <!--Row1-->
-        <TextBlock Text="{Binding FullName, Mode=OneWay}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></TextBlock>
+        <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></TextBlock>
         
         <!--Row 2-->
         <TextBox x:Name="FirstName" Grid.Row="2" Grid.Column="1" MinWidth="150"></TextBox>
@@ -36,5 +37,9 @@
         <ComboBox Grid.Row="3" Grid.Column="1" x:Name="People" 
                   SelectedItem="{Binding Path=SelectedPerson, Mode=OneWay}"
                   DisplayMemberPath="FirstName"></ComboBox>
+        <TextBlock Grid.Row="3" Grid.Column="2" x:Name="SelectedPerson_LastName"/>
+        
+        <!--Row 4-->
+        <Button Grid.Row="4" Grid.Column="1" x:Name="ClearText">Clear text</Button>
     </Grid>
 </Window>
