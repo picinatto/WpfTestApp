@@ -22,6 +22,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -41,5 +42,12 @@
         
         <!--Row 4-->
         <Button Grid.Row="4" Grid.Column="1" x:Name="ClearText">Clear text</Button>
+
+        <!--Row 5-->
+        <Button x:Name="LoadPageOne" Grid.Row="5" Grid.Column="1">Load First Page</Button>
+        <Button x:Name="LoadPageTwo" Grid.Row="5" Grid.Column="2">Load Second Page</Button>
+        
+        <!--Row 6-->
+        <ContentControl Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="5" x:Name="ActiveItem"></ContentControl>
     </Grid>
 </Window>
